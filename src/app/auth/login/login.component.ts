@@ -4,10 +4,9 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 // import { AuthService } from 'src/app/services/auth.service';
 import {AuthService1Service} from 'src/app/services/auth-service1.service';
-// import {AuthService,SocialUser,GoogleLoginProvider,FacebookLoginProvider} from 'ng4-social-login';
-// import { HttpClient } from '@angular/common/http';
+import {AuthService,SocialUser,GoogleLoginProvider,FacebookLoginProvider} from 'ng4-social-login';
+import { HttpClient } from '@angular/common/http';
 declare function showSwal(type,message):any;
-import { BehaviorSubject } from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -24,72 +23,72 @@ export class LoginComponent implements OnInit {
   public siteKey:string = '';
   public captcha = false;
 
-  // public userSocial :any=SocialUser;
+  public userSocial :any=SocialUser;
 
-  constructor(private authService:AuthService1Service,private router:Router,private location:Location) { }
+  constructor(private http:HttpClient,private authService:AuthService1Service,private router:Router,private location:Location,private socialAuthService:AuthService) { }
 
-  // facebookLogin(){
-  //   this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID).then((userData)=>{
-  //     this.http.post('http://localhost:8000/api/auth/checkemailSocial',{
-  //       email:userData.email,
-  //       name:userData.name,
-  //     }).subscribe(
-  //       res=>{
-  //         if(res['result']=='success'){
-  //           if(!sessionStorage.getItem('wrong')){
-  //             sessionStorage.removeItem('wrong');
-  //           }
-  //           this.wrongacc = '';
-  //           this.user=res['user'];
-  //           if(this.user.user_level==3){
-  //             if(sessionStorage.getItem('thanhtoan')){
-  //               this.router.navigate(['/cart/thanhtoan/null']);
-  //             }else{
-  //               this.router.navigate(['../']);
-  //             }
-  //           }else{
-  //             this.dangnhapsai();
-  //           }
-  //           this.saveSession();
-  //           showSwal('auto-close','Đăng nhập thành công!');
-  //         }else{
-  //           this.dangnhapsai();
-  //         }
-  //       }
-  //     );
-  //   });
-  // }
-  // googleLogin(){
-  //   this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((userData)=>{
-  //     this.http.post('http://localhost:8000/api/auth/checkemailSocial',{
-  //       email:userData.email,
-  //       name:userData.name,
-  //     }).subscribe(
-  //       res=>{
-  //         if(res['result']=='success'){
-  //           if(!sessionStorage.getItem('wrong')){
-  //             sessionStorage.removeItem('wrong');
-  //           }
-  //           this.wrongacc = '';
-  //           this.user=res['user'];
-  //           if(this.user.user_level==3){
-  //             if(sessionStorage.getItem('thanhtoan')){
-  //               this.router.navigate(['/cart/thanhtoan']);
-  //             }else{
-  //               this.router.navigate(['../']);
-  //             }
-  //           }else{
-  //             this.dangnhapsai();
-  //           }
-  //           this.saveSession();
-  //           showSwal('auto-close','Đăng nhập thành công!');
-  //         }else{
-  //           this.dangnhapsai();
-  //         }
-  //       }
-  //     );
-  //   });
-  // }
+  facebookLogin(){
+    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID).then((userData)=>{
+      this.http.post('http://localhost:8000/api/auth/checkemailSocial',{
+        email:userData.email,
+        name:userData.name,
+      }).subscribe(
+        res=>{
+          if(res['result']=='success'){
+            if(!sessionStorage.getItem('wrong')){
+              sessionStorage.removeItem('wrong');
+            }
+            this.wrongacc = '';
+            this.user=res['user'];
+            if(this.user.user_level==3){
+              if(sessionStorage.getItem('thanhtoan')){
+                this.router.navigate(['/cart/thanhtoan/null']);
+              }else{
+                this.router.navigate(['../']);
+              }
+            }else{
+              this.dangnhapsai();
+            }
+            this.saveSession();
+            showSwal('auto-close','Đăng nhập thành công!');
+          }else{
+            this.dangnhapsai();
+          }
+        }
+      );
+    });
+  }
+  googleLogin(){
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((userData)=>{
+      this.http.post('http://localhost:8000/api/auth/checkemailSocial',{
+        email:userData.email,
+        name:userData.name,
+      }).subscribe(
+        res=>{
+          if(res['result']=='success'){
+            if(!sessionStorage.getItem('wrong')){
+              sessionStorage.removeItem('wrong');
+            }
+            this.wrongacc = '';
+            this.user=res['user'];
+            if(this.user.user_level==3){
+              if(sessionStorage.getItem('thanhtoan')){
+                this.router.navigate(['/cart/thanhtoan']);
+              }else{
+                this.router.navigate(['../']);
+              }
+            }else{
+              this.dangnhapsai();
+            }
+            this.saveSession();
+            showSwal('auto-close','Đăng nhập thành công!');
+          }else{
+            this.dangnhapsai();
+          }
+        }
+      );
+    });
+  }
   ngOnInit(): void {
     this.siteKey = '6Leua30aAAAAAPcbBAScg5pPnWyMRk__PxLGISXg';
     // this.siteKey = '6LfA2NkZAAAAAEL3YAclo_5tv58ouFCkrsitmE9z';
