@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>TTN Shop - Home</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/information.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+   <!--  thu vien cho silde -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://kit.fontawesome.com/2703c57f79.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(function() {
+            var pull        = $('#pull');
+            menu        = $('nav ul');
+            menuHeight  = menu.height();
+
+            $(pull).on('click', function(e) {
+                e.preventDefault();
+                menu.slideToggle();
+            });
+        });
+
+        $(window).resize(function(){
+            var w = $(window).width();
+            if(w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+            }
+        });
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-2 ">
+                    <p><i class="fas fa-home" style="margin-right: 10px;"></i>TTN-SHOP</p>
+                </div>
+                 <div  class="submit" class="col-xs-12 col-sm-12 col-md-4 ">
+                    <form class="navbar-form pull-right">
+                        <input type="text" style="width: 200px;" placeholder="Tìm kiếm">
+                        <button class="btn" type="submit" class="btn btn-default">Search</button>
+                    </form>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 ">
+                    <p class="link" class="navbar-text pull-right">
+                        <a href="#" class="navbar-link"><i class="fas fa-user"></i>Đăng ký</a>
+                        <a href="#" class="navbar-link"><i class="fas fa-user"></i>Đăng nhập</a>
+                    </p>
+                </div>
+                <div id="cart" class="col-xs-12 col-sm-12 col-md-2 ">
+                    <p>Giỏ hàng</p>
+                   <img src="img/home/giohang.png">
+                   <a href="#">6</a>    
+                </div>
+            </div>
+        </div>
+    </header>
+
+	<section id="body" >
+		<div class="container main">
+			<div class="row">
+				<div class="col-md-3">
+					<nav id="menu">
+						<ul>
+							<li onclick="openform1()"><i class="fas fa-edit"></i>Sửa thông tin</li>
+							<li onclick="openform()"><i class="fas fa-history"></i>Lịch sử mua hàng</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-md-9">
+					<table class="table table-bordered">
+                        <thead >
+                            <tr class="bg-info">
+                                <th width="50%">Họ và tên</th>
+                                <th width="50%">Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td> 
+                            </tr>
+                        </tbody>
+                    </table>
+					
+                    <form action="" id="form1" method="post" onsubmit=" return matchpass()" name="f1">
+                    	<div class="form-group">
+							<p>Họ và tên</p>
+							<input class="form-control" placeholder="name_id" name="name" type="text" autofocus=""   value="{{$user->name}}">
+					    </div>
+					    <div class="form-group">
+							<p>Email</p>
+							<input class="form-control" placeholder="name_id" name="email" type="text" autofocus=""   value="{{$user->email}}">
+					    </div>
+					    <div class="form-group">
+							<p>Mật khẩu cũ</p>
+							<input class="form-control" placeholder="Mật khẩu cũ" name="old_password" type="text" autofocus=""   >
+					    </div>
+					    <div class="form-group">
+							<p>Mật khẩu mới</p>
+							<input class="form-control" placeholder="Mật khẩu mới" name="password" type="text" autofocus="" >
+					    </div>
+					    <div class="form-group">
+							<p>Nhập lại mật khẩu mới</p>
+							<input class="form-control" placeholder="Nhập lại mật khẩu mới" name="password_confirmation" type="text" autofocus="" >
+					    </div>
+					    <button type="submit" class="btn btn-default sua">Sửa thông tin</button>
+                    </form>
+
+                    <table class="table table-bordered" id="form2" onload="myfuction()" >
+                        <thead >
+                            <tr class="bg-info">
+                                <th width="20%">Tên đơn hàng</th>
+                                <th width="5%">Số lượng hàng</th>
+                                <th width="30%">Tên khách hàng</th>
+                                <th width="30%">Địa chỉ</th>
+                                <th width="15%">Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+		document.getElementById('form2').style.display="none";
+		function openform(){
+			 document.getElementById("form1").style.display = "none";
+			 document.getElementById("form2").style.display = "block";
+		}
+		function openform1(){
+			 document.getElementById("form1").style.display = "block";
+			 document.getElementById("form2").style.display = "none";
+		}
+
+		function matchpass(){
+			var firstpassword=document.f1.password.value;  
+			var secondpassword=document.f1.password_confirmation.value;  
+			var old_password =document.f1.old_password.value;
+			if (old_password==null) {
+				alert("Mật khẩu cũ không được để rỗng");
+			}
+			  
+			if(firstpassword==secondpassword){  
+			return true;  
+			}  
+			else{  
+			alert("Mật khẩu không trùng");  
+			return false;  
+			}
+		}
+	</script>
+ <footer id="footer">  
+    <div class="row footer1">
+        <div class="container">
+            <div class="row info">
+                <div class="col-md-4">
+                    <div class="logo">
+                          <h4> <i class="fas fa-home"></i>Logo trang chủ</h4>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="diachi">
+                        <h5>Địa chỉ</h5>
+                        <p>Tô ký-Quận 12-Thành phố Hồ Chí Minh</p>
+                    </div>
+                </div>
+                <div  class="col-md-4">
+                    <div class="hotline">
+                        <h5>Hotline</h5>
+                        <p>0987653728</p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+       
+        <div id="scroll">
+             <a href="#"><img src="img/home/scroll.png"></a>
+         </div>  
+    </div>          
+    </footer>
+    <!-- endfooter -->
+</body>
+</html>
+

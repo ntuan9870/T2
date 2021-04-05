@@ -1,0 +1,10 @@
+.form-quen-mat-khau{
+	background: rgb(255, 255, 255);
+	padding: 15px 10px 20px 10px;
+	border-radius: 7px;
+	margin-left: 30%;
+}
+.form-quen-mat-khau .btn{
+	width: 60%;
+	margin-left: 19%;
+}

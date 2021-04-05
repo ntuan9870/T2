@@ -1,0 +1,43 @@
+
+body {
+	background: url('../img/home/background.jpg') no-repeat center;
+	/*background: #cfc4ce;*/
+	padding-top: 50px;
+	color: #5f6468;
+	overflow-x:hidden;
+	/*margin: 0px;
+	padding: 0px;*/
+}
+.login-panel{
+	margin-left: 50%;
+	width: 600px;
+	height: 500px;
+}
+.panel-heading{
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 15px;
+	text-shadow: 2px 2px 2px #595252;
+	color: white;
+}
+.note{
+	color: red;
+}
+.btn{
+	margin-left: 240px;
+	cursor: pointer;
+}
+.panel-body{
+	/*background: url('../img/home/nenlogin.jpg') no-repeat center;*/
+	padding: 15px 0px 20px 0px;
+}
+.khung .form-group input{
+	width: 400px;
+	margin-left: 100px;
+}
+.khung p{
+	margin:15px 0px 15px 100px;
+}
+.form-group p{
+	color:white;
+}

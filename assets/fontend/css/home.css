@@ -1,0 +1,309 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+  padding: 0;
+	margin: 0;
+	font-family: arial;
+	font-size: 14px;
+	color: #666;
+	background: #f4e9f4;
+	overflow-x:hidden;
+}
+
+#header{
+	background: #FF9600;
+	position: relative;
+}
+.submit{
+	margin-top:10px;
+}
+.btn{
+	height: 25px;
+    padding-top: 1px;
+}
+p{
+	margin-top: 12px;
+}
+a{
+	color: #392c2d;
+}
+.navbar a{
+	/*margin-left:70px;*/
+	color: #392c2d;
+}
+
+#cart img{
+	width: 45px;
+	height: 45px;
+}
+#cart p{
+	float: left;
+	margin-right: 7px;
+}
+
+#body{
+	margin-top: 15px;
+}
+#menu{
+	background: #fbfbfb;
+	border: 1px solid #ddd;
+}
+.menu-item{
+	list-style: none;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #ddd;
+	padding-left: 15px;
+}
+.menu-item a{
+	color: #666;
+}
+.menu-item:first-child{
+	background: #f5f5f5;
+	text-transform: uppercase;
+}
+.menu-item:last-child{
+	border: none;
+}
+.menu-item .fas{
+	margin-right: 10px;
+	color: #FF9600;
+}
+.banner-l-item{
+	margin-top: 15px;
+	max-width: 100%;
+}
+.banner-l-item img{
+	border: none;
+	padding: 0;
+	border-radius: 5px;
+	margin: 0px 12px 0px 12px;
+	box-shadow: 5px 5px ;
+}
+.products{
+	background: #fbfbfb;
+	padding-top: 1px ;
+	margin-top: 15px;
+	border-radius: 12px;
+}
+.products h3{
+	margin-top: 15px;
+	font-size: 18px;
+	color: #ff9600;
+	text-transform: uppercase;
+	margin-left: 22px;
+}
+.product-list{
+	margin: 0;
+}
+.sale1{
+	margin: 0px;
+    padding: 40px 0px;
+    position: absolute;
+}
+ .sale{
+	width:50px;
+	position: absolute;
+	background: url('../img/home/sale.png') no-repeat center;
+	color: #fff;
+	font-weight: bold;
+	padding-right: 20px;
+	left: -10px;
+	top: -2px;
+}
+.product-item{
+	border: 1px solid #ddd;
+	text-align: center;
+	padding: 15px;
+	position: relative;
+	margin: 4px 12px 4px 22px;
+}
+.product-item img{
+	border: none;
+	padding: 0;
+	border-radius: 0;
+	margin-bottom: 15px;
+	height: 135px;
+}
+.product-item img:hover{
+	/*filter: brightness(80%);*/
+	transform: scale(1.1);
+}
+.product-item a{
+	color: #666;
+	font-size: 15px;
+}
+
+#footer{
+	margin-top: 15px;
+}
+#footer-t{
+	background: #FF9600;
+	color: #fff;
+	padding: 15px 0 0 0;
+	height: 100px;
+}
+
+.footer1{
+	background: #fbfbfb;
+}
+.logo{
+	text-align: center;
+
+}
+.logo .fas{
+	color: #c1721d;
+	}
+.hotline{
+	text-align: center;
+}
+.hotline h5{
+	color: #c1721d;
+}
+.diachi{
+	text-align: center;
+}
+.diachi h5{
+	color: #c1721d;
+}
+.info{
+	margin-top: 7px;
+}
+#scroll{
+	/*position: absolute;*/
+	top: 0;
+	right: 0;
+}
+#scroll a img{
+	float: right;
+}
+.nav{
+	float: right;
+}
+
+
+/*Navbar*/
+
+.navbar {
+	border: 0;
+}
+
+.navbar input {
+	border: 0;
+	background: #444;
+	color: #fff;
+}
+
+.navbar input:focus {
+	color: #fff;
+	background: #555;
+	border: 1px solid #30a5ff;
+	outline: 0;
+	box-shadow: inset 0px 0px 0px 1px #30a5ff;
+}
+.navbar-header{
+	margin-top: 5px;
+}
+.user-menu {
+	display: inline-block;
+	margin-right: 10px;
+	float: right;
+	list-style: none;
+	padding: 0;
+}
+
+.user-menu a {
+	color: black;
+}
+/*.menu{
+	height: 100px;
+	width: 30px;
+}*/
+
+.user-menu a:hover, .user-menu a:focus {
+	text-decoration: none;
+}
+
+/*Icons*/
+
+
+.sidebar .glyph, .user-menu .glyph {
+	height: 16px;
+	width: 16px;
+	margin: 0 10px 0 0;
+	stroke-width: 3px;
+}
+
+.user-menu .glyph {
+	stroke-width: 4px;
+}
+
+.breadcrumb .glyph {
+	height: 14px;
+	width: 14px;
+	margin: -2px 0 0 0;
+	stroke-width: 4px;
+}
+
+.alert .glyph, .panel-heading .glyph {
+	width: 26px;
+	height: 26px;
+	margin: 0 10px 0 0;
+	stroke-width: 2px;
+}
+
+.panel-widget .glyph {
+	stroke-width: 2px;
+}
+
+.todo-list .glyph {
+	width: 14px;
+	height: 14px;
+	stroke-width: 4px;
+	color: #999;
+}
+
+.glyph.table {
+	background: none;
+	border: none;
+}
+
+/*Icon Grid*/
+
+.icon-grid div {
+	border: 1px solid #ddd;
+	margin: 0 0 -1px -1px;
+	text-align: center;
+	padding: 10px 0 20px 0;
+}
+
+.icon-grid svg {
+	width: 35%;
+	display: block;
+	margin: 0 auto;
+}
+
+.icon-grid h4 {
+	display: none;
+}
+
+.icon-grid pre {
+	margin: 10px 10px -10px 10px;
+	border-radius: 0;
+	font-size: 10px;
+	border-color: #ddd;
+	height: 65px;
+	overflow: scroll;
+}
+.dropdown-menu a .fas{
+	margin-right: 5px;
+}
+.giohang{
+	float: right;
+	position: absolute;
+	top: 1px;
+	color: red;
+	margin-left: 130px;
+}

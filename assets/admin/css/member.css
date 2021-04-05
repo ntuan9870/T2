@@ -1,0 +1,11 @@
+.menu{
+	height: 40px;
+	margin: 0px 0px 10px 0px;
+}
+.menu .btn{
+	background:#FF9600; 
+	color:white;
+}
+.note{
+	color: #d72e26;
+}

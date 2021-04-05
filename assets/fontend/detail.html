@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>TTN Shop - Home</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <script type="text/javascript" src="js/detail.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+   <!--  thu vien cho silde -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://kit.fontawesome.com/2703c57f79.js" crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+      const el = document.querySelector("#move");
+
+        el.addEventListener("mousemove", (e) => {
+          el.style.backgroundPositionX = -e.offsetX + "px";
+          el.style.backgroundPositionY = -e.offsetY + "px";
+        });
+  </script>
+    <script type="text/javascript">
+        $(function() {
+            var pull        = $('#pull');
+            menu        = $('nav ul');
+            menuHeight  = menu.height();
+
+            $(pull).on('click', function(e) {
+                e.preventDefault();
+                menu.slideToggle();
+            });
+        });
+
+        $(window).resize(function(){
+            var w = $(window).width();
+            if(w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+            }
+        });
+    </script>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="row">
+               <div class="col-xs-12 col-sm-12 col-md-2 ">
+                    <p><i class="fas fa-home" style="margin-right: 10px;"></i>TTN-SHOP</p>
+                </div>
+                 <div  class="submit" class="col-xs-12 col-sm-12 col-md-4 ">
+                    <form class="navbar-form pull-right">
+                        <input type="text" style="width: 200px;" placeholder="Tìm kiếm">
+                        <button class="btn" type="submit" class="btn btn-default">Search</button>
+                    </form>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 ">
+                    <p class="link" class="navbar-text pull-right">
+                        <a href="#" class="navbar-link"><i class="fas fa-user"></i>Đăng ký</a>
+                        <a href="#" class="navbar-link"><i class="fas fa-user"></i>Đăng nhập</a>
+                    </p>
+                </div>
+                <div id="cart" class="col-xs-12 col-sm-12 col-md-2 ">
+                    <p>Giỏ hàng</p>
+                   <img src="img/home/giohang.png">
+                    <a href="#">6</a>   
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section  id="body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <nav id="menu">
+                        <ul>
+                            <li class="menu-item">danh mục sản phẩm</li>
+                            <li class="menu-item"><a href="#" title=""><i class="fas fa-mobile-alt"></i>iPhone</a></li>
+                            <li class="menu-item"><a href="#" title=""><i class="fas fa-mobile-alt"></i>Samsung</a></li>
+                            <li class="menu-item"><a href="#" title=""><i class="fas fa-mobile-alt"></i>Sony</a></li>
+                            <li class="menu-item"><a href="#" title=""><i class="fas fa-mobile-alt"></i>HTC</a></li>
+                            <li class="menu-item"><a href="#" title=""><i class="fas fa-mobile-alt"></i>LG</a></li>
+                            <li class="menu-item"><a href="#" title=""><i class="fas fa-mobile-alt"></i>OPPO</a></li>
+                            <li class="menu-item"><a href="#" title=""><i class="fas fa-mobile-alt"></i>Blackberry</a></li>                      
+                        </ul>
+                        <!-- <a href="#" id="pull">Danh mục</a> -->
+                    </nav>
+                </div>
+
+                <div  id="main" class="col-md-9">
+                   <!-- main -->
+                    <!-- phan slide la cac hieu ung chuyen dong su dung jquey -->
+                    <div id="slider">
+                        <div id="demo" class="carousel slide" data-ride="carousel">
+
+                            <!-- Indicators -->
+                            <ul class="carousel-indicators">
+                                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                <li data-target="#demo" data-slide-to="1"></li>
+                                <li data-target="#demo" data-slide-to="2"></li>
+                            </ul>
+
+                            <!-- The slideshow -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/home/slide-1.png" alt="Los Angeles" >
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/home/slide-2.png" alt="Chicago">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/home/slide-3.png" alt="New York" >
+                                </div>
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#demo" data-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                   
+                </div>
+                <div id="main" class="col-md-12">
+                    <div id="wrap-inner">
+                        <div id="product-info">
+                            <div class="clearfix"></div>
+                            <h3>Điện thoại Apple iPhone 7 Plus - 32GB</h3>
+                            <div class="row">
+                                <div id="product-img" id="move" class="col-xs-12 col-sm-12 col-md-3 text-center">
+                                    <img src="img/detail/product.jpg">
+                                </div>
+                                <div id="product-details" class="col-xs-12 col-sm-12 col-md-6">
+                                    <p>Giá: <span class="price">10.000.000</span></p>
+                                    <p>Bảo hành: 1 đổi 1 trong 12 tháng</p> 
+                                    <p>Phụ kiện: Dây cáp sạc, tai nghe</p>
+                                    <p>Tình trạng: Máy mới 100%</p>
+                                    <p>Khuyến mại: Hỗ trợ trả góp 0% dành cho các chủ thẻ Ngân hàng Sacombank</p>
+                                    <p>Còn hàng: Còn hàng</p>
+                                    <p class="add-cart text-center"><a href="#"><i class="fas fa-shopping-cart"></i>Đặt hàng online</a></p>
+                                </div>
+                            </div>                          
+                        </div>
+                        <div id="product-detail">
+                            <h3>Chi tiết sản phẩm</h3>
+                            <table class="table table-bordered">
+                                <thead >
+                                    <tr class="bg-info">
+                                        <th>Tên</th>
+                                        <th>Giá</th>
+                                        <th>Ảnh</th>
+                                        <th>Tên</th>
+                                        <th>Tên</th>
+                                        <th>Giá</th>
+                                        <th>Ảnh</th>
+                                        <th>Tên</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                         <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                         <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="comment">
+                            <h3>Bình luận</h3>
+                            <div class="col-md-6 comment">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="email">Email:</label>
+                                        <input required type="email" class="form-control" id="email" name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Tên:</label>
+                                        <input required type="text" class="form-control" id="name" name="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cm">Bình luận:</label>
+                                        <textarea required rows="10" id="cm" class="form-control" name="content"></textarea>
+                                    </div>
+                                    <div class="stars starrr" data-rating="0"></div>
+                                    <div class="form-group text-right">
+                                        <button type="submit" class="btn btn-default">Gửi</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="comment-list">
+                            <ul>
+                                <li class="com-title">
+                                    Vietpro Education
+                                    <br>
+                                    <span>2017-19-01 10:00:00</span>    
+                                </li>
+                                <li class="com-details">
+                                    HTC One X 32GB là sản phẩm đáng chờ đợi nhất trong năm nay, với cấu hình mạnh và giá thành tương đối mềm so với các dòng Smart Phone của các hãng khác
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="com-title">
+                                    Vietpro Education
+                                    <br>
+                                    <span>2017-19-01 10:00:00</span>    
+                                </li>
+                                <li class="com-details">
+                                    HTC One X 32GB là sản phẩm đáng chờ đợi nhất trong năm nay, với cấu hình mạnh và giá thành tương đối mềm so với các dòng Smart Phone của các hãng khác
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="com-title">
+                                    Vietpro Education
+                                    <br>
+                                    <span>2017-19-01 10:00:00</span>    
+                                </li>
+                                <li class="com-details">
+                                    HTC One X 32GB là sản phẩm đáng chờ đợi nhất trong năm nay, với cấu hình mạnh và giá thành tương đối mềm so với các dòng Smart Phone của các hãng khác
+                                </li>
+                            </ul>
+                        </div>
+                    </div>                  
+                    <!-- end main -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">  
+    <div class="row footer1">
+       <div class="container">
+            <div class="row info">
+                <div class="col-md-4">
+                    <div class="logo">
+                          <h4> <i class="fas fa-home"></i>Logo trang chủ</h4>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="diachi">
+                        <h5>Địa chỉ</h5>
+                        <p>Tô ký-Quận 12-Thành phố Hồ Chí Minh</p>
+                    </div>
+                </div>
+                <div  class="col-md-4">
+                    <div class="hotline">
+                        <h5>Hotline</h5>
+                        <p>0987653728</p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+       
+        <div id="scroll">
+             <a href="#"><img src="img/home/scroll.png"></a>
+         </div>  
+    </div>          
+    </footer>
+    <!-- endfooter -->
+</body>
+</html>
+<script>
+    (function(e){var t,o={className:"autosizejs",append:"",callback:!1,resizeDelay:10},i='<textarea tabindex="-1" style="position:absolute; top:-999px; left:0; right:auto; bottom:auto; border:0; padding: 0; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; box-sizing:content-box; word-wrap:break-word; height:0 !important; min-height:0 !important; overflow:hidden; transition:none; -webkit-transition:none; -moz-transition:none;"/>',n=["fontFamily","fontSize","fontWeight","fontStyle","letterSpacing","textTransform","wordSpacing","textIndent"],s=e(i).data("autosize",!0)[0];s.style.lineHeight="99px","99px"===e(s).css("lineHeight")&&n.push("lineHeight"),s.style.lineHeight="",e.fn.autosize=function(i){return this.length?(i=e.extend({},o,i||{}),s.parentNode!==document.body&&e(document.body).append(s),this.each(function(){function o(){var t,o;"getComputedStyle"in window?(t=window.getComputedStyle(u,null),o=u.getBoundingClientRect().width,e.each(["paddingLeft","paddingRight","borderLeftWidth","borderRightWidth"],function(e,i){o-=parseInt(t[i],10)}),s.style.width=o+"px"):s.style.width=Math.max(p.width(),0)+"px"}function a(){var a={};if(t=u,s.className=i.className,d=parseInt(p.css("maxHeight"),10),e.each(n,function(e,t){a[t]=p.css(t)}),e(s).css(a),o(),window.chrome){var r=u.style.width;u.style.width="0px",u.offsetWidth,u.style.width=r}}function r(){var e,n;t!==u?a():o(),s.value=u.value+i.append,s.style.overflowY=u.style.overflowY,n=parseInt(u.style.height,10),s.scrollTop=0,s.scrollTop=9e4,e=s.scrollTop,d&&e>d?(u.style.overflowY="scroll",e=d):(u.style.overflowY="hidden",c>e&&(e=c)),e+=w,n!==e&&(u.style.height=e+"px",f&&i.callback.call(u,u))}function l(){clearTimeout(h),h=setTimeout(function(){var e=p.width();e!==g&&(g=e,r())},parseInt(i.resizeDelay,10))}var d,c,h,u=this,p=e(u),w=0,f=e.isFunction(i.callback),z={height:u.style.height,overflow:u.style.overflow,overflowY:u.style.overflowY,wordWrap:u.style.wordWrap,resize:u.style.resize},g=p.width();p.data("autosize")||(p.data("autosize",!0),("border-box"===p.css("box-sizing")||"border-box"===p.css("-moz-box-sizing")||"border-box"===p.css("-webkit-box-sizing"))&&(w=p.outerHeight()-p.height()),c=Math.max(parseInt(p.css("minHeight"),10)-w||0,p.height()),p.css({overflow:"hidden",overflowY:"hidden",wordWrap:"break-word",resize:"none"===p.css("resize")||"vertical"===p.css("resize")?"none":"horizontal"}),"onpropertychange"in u?"oninput"in u?p.on("input.autosize keyup.autosize",r):p.on("propertychange.autosize",function(){"value"===event.propertyName&&r()}):p.on("input.autosize",r),i.resizeDelay!==!1&&e(window).on("resize.autosize",l),p.on("autosize.resize",r),p.on("autosize.resizeIncludeStyle",function(){t=null,r()}),p.on("autosize.destroy",function(){t=null,clearTimeout(h),e(window).off("resize",l),p.off("autosize").off(".autosize").css(z).removeData("autosize")}),r())})):this}})(window.jQuery||window.$);
+
+var __slice=[].slice;(function(e,t){var n;n=function(){function t(t,n){var r,i,s,o=this;this.options=e.extend({},this.defaults,n);this.$el=t;s=this.defaults;for(r in s){i=s[r];if(this.$el.data(r)!=null){this.options[r]=this.$el.data(r)}}this.createStars();this.syncRating();this.$el.on("mouseover.starrr","span",function(e){return o.syncRating(o.$el.find("span").index(e.currentTarget)+1)});this.$el.on("mouseout.starrr",function(){return o.syncRating()});this.$el.on("click.starrr","span",function(e){return o.setRating(o.$el.find("span").index(e.currentTarget)+1)});this.$el.on("starrr:change",this.options.change)}t.prototype.defaults={rating:void 0,numStars:5,change:function(e,t){}};t.prototype.createStars=function(){var e,t,n;n=[];for(e=1,t=this.options.numStars;1<=t?e<=t:e>=t;1<=t?e++:e--){n.push(this.$el.append("<span class='glyphicon .glyphicon-star-empty'></span>"))}return n};t.prototype.setRating=function(e){if(this.options.rating===e){e=void 0}this.options.rating=e;this.syncRating();return this.$el.trigger("starrr:change",e)};t.prototype.syncRating=function(e){var t,n,r,i;e||(e=this.options.rating);if(e){for(t=n=0,i=e-1;0<=i?n<=i:n>=i;t=0<=i?++n:--n){this.$el.find("span").eq(t).removeClass("glyphicon-star-empty").addClass("glyphicon-star")}}if(e&&e<5){for(t=r=e;e<=4?r<=4:r>=4;t=e<=4?++r:--r){this.$el.find("span").eq(t).removeClass("glyphicon-star").addClass("glyphicon-star-empty")}}if(!e){return this.$el.find("span").removeClass("glyphicon-star").addClass("glyphicon-star-empty")}};return t}();return e.fn.extend({starrr:function(){var t,r;r=arguments[0],t=2<=arguments.length?__slice.call(arguments,1):[];return this.each(function(){var i;i=e(this).data("star-rating");if(!i){e(this).data("star-rating",i=new n(e(this),r))}if(typeof r==="string"){return i[r].apply(i,t)}})}})})(window.jQuery,window);$(function(){return $(".starrr").starrr()})
+
+$(function(){
+
+  $('#new-review').autosize({append: "\n"});
+
+  var reviewBox = $('#post-review-box');
+  var newReview = $('#new-review');
+  var openReviewBtn = $('#open-review-box');
+  var closeReviewBtn = $('#close-review-box');
+  var ratingsField = $('#ratings-hidden');
+
+  openReviewBtn.click(function(e)
+  {
+    reviewBox.slideDown(400, function()
+      {
+        $('#new-review').trigger('autosize.resize');
+        newReview.focus();
+      });
+    openReviewBtn.fadeOut(100);
+    closeReviewBtn.show();
+  });
+
+  closeReviewBtn.click(function(e)
+  {
+    e.preventDefault();
+    reviewBox.slideUp(300, function()
+      {
+        newReview.focus();
+        openReviewBtn.fadeIn(200);
+      });
+    closeReviewBtn.hide();
+    
+  });
+
+  $('.starrr').on('starrr:change', function(e, value){
+    ratingsField.val(value);
+  });
+});
+</script>

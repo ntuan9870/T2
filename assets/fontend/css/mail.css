@@ -1,0 +1,28 @@
+.form-quen-mat-khau{
+	background: rgb(255, 255, 255);
+	padding: 15px 10px 20px 10px;
+	border-radius: 7px;
+	margin-left: 30%;
+}
+.form-quen-mat-khau .btn{
+	width: 60%;
+	margin-left: 19%;
+	cursor: pointer;
+}
+.btn:hover{
+	background: green;
+}
+.navbar{
+	background: #FF9600;
+}
+#myProgress {
+  width: 100%;
+  background-color: grey;
+  margin-top: 10px;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
+}
