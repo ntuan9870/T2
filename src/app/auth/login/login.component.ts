@@ -5,7 +5,7 @@ import { User } from 'src/app/models/user.model';
 // import { AuthService } from 'src/app/services/auth.service';
 import {AuthService1Service} from 'src/app/services/auth-service1.service';
 // import {AuthService,SocialUser,GoogleLoginProvider,FacebookLoginProvider} from 'ng4-social-login';
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 declare function showSwal(type,message):any;
 import { BehaviorSubject } from "rxjs";
 
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   // public userSocial :any=SocialUser;
 
-  constructor(private http:HttpClient,private authService:AuthService1Service,private router:Router,private location:Location) { }
+  constructor(private authService:AuthService1Service,private router:Router,private location:Location) { }
 
   // facebookLogin(){
   //   this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID).then((userData)=>{
