@@ -7,6 +7,7 @@ import {AuthService1Service} from 'src/app/services/auth-service1.service';
 import {AuthService,SocialUser,GoogleLoginProvider,FacebookLoginProvider} from 'ng4-social-login';
 import { HttpClient } from '@angular/common/http';
 declare function showSwal(type,message):any;
+import { BehaviorSubject } from "rxjs";
 
 @Component({
   selector: 'app-login',
